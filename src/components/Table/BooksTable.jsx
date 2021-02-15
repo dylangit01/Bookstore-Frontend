@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import useTable from './useTable'
-import { Paper, TableBody, TableRow, TableCell, Toolbar, InputBase, Button, } from '@material-ui/core'
+import { Paper, TableBody, TableRow, TableCell, Toolbar, InputBase, Button, CircularProgress } from '@material-ui/core'
 import { useSelector, useDispatch } from 'react-redux'
 import SearchIcon from '@material-ui/icons/Search'
 import AddIcon from '@material-ui/icons/Add'
@@ -19,7 +19,7 @@ const headCells = [
 
 const BooksTable = () => {
   const classes = useStyles()
-  const books = useSelector((state) => state.books)
+  const books = useSelector(state => state.books)
   const dispatch = useDispatch()
 
   const [filterFn, setFilterFn] = useState({
@@ -49,7 +49,7 @@ const BooksTable = () => {
   }
 
   return (
-    <>
+      !books.length ? <div className={classes.circularProcess} ><CircularProgress /></div> : (
       <Paper className={classes.pageContent}>
         <Toolbar className={classes.toolbarMb}>
           <InputBase
@@ -72,7 +72,7 @@ const BooksTable = () => {
           </Button>
         </Toolbar>
 
-        <TblContainer>
+          <TblContainer>
           <TblHead />
 
           <TableBody>
@@ -103,9 +103,8 @@ const BooksTable = () => {
             ))}
           </TableBody>
         </TblContainer>
-        <TblPagination />
-      </Paper>
-    </>
+          <TblPagination />
+      </Paper>)
   )
 }
 

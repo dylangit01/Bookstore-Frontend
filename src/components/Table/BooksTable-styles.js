@@ -59,4 +59,10 @@ export default makeStyles((theme) => ({
     whiteSpace: 'nowrap',
     textAlign: 'center',
   },
+  circularProcess: {
+    paddingTop: '200px',
+    height: '400px',
+    display: 'flex',
+    justifyContent: 'center'
+  }
 }))
