@@ -1,0 +1,10 @@
+export const CREATE = 'CREATE';
+export const UPDATE = 'UPDATE';
+export const FETCH_ALL = 'FETCH_ALL';
+export const DELETE = 'DELETE';
+export const GET_ID = 'GET_ID';
+export const SEARCH_BOOK = 'SEARCH_BOOK';
+export const POPUP_ON = 'POPUP_ON'
+export const POPUP_OFF = 'POPUP_OFF'
+export const CLEAR_ID = 'CLEAR_ID'
+export const FORM_CLEANUP = 'FORM_CLEANUP'
